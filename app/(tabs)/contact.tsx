@@ -1,9 +1,10 @@
+import { Link } from "expo-router";
 import { Text, View, StyleSheet } from "react-native";
 
-export default function Index() {
+export default function ContactScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Welcome to StickerSmash2.0</Text>
+      <Text style={styles.text}>Contact Screen</Text>
     </View>
   );
 }
@@ -17,14 +18,5 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#FFFFFF",
-  },
-  // link: {
-  //   color: "white",
-  //   textDecorationLine: "underline",
-  // },
-  button: {
-    fontSize: 20,
-    textDecorationLine: "underline",
-    color: "#fff",
   },
 });

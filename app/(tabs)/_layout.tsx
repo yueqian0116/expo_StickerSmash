@@ -1,35 +1,62 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarActiveTintColor: "#248232",
+        headerStyle: {
+          backgroundColor: "#25292e", // the style of tab bar above
+        },
+        headerShadowVisible: false,
+        headerTintColor: "#fff",
+        tabBarStyle: {
+          backgroundColor: "#25292e", // the style of tabs below
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          tabBarIcon: ({ focused, color }) => (
+            <Ionicons
+              name={focused ? "home-sharp" : "home-outline"}
+              color={color} //Tabbaractive tint color
+              size={20}
+            />
+          ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="about"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "About",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={
+                focused ? "information-circle" : "information-circle-outline"
+              }
+              color={color}
+              size={20}
+            />
+          ),
         }}
       />
+      {/* <Tabs.Screen
+        name="contact"
+        options={{
+          headerTitle: "Contact",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? "call-sharp" : "call-outline"}
+              color={color}
+              size={20}
+            />
+          ),
+        }}
+      /> */}
     </Tabs>
   );
 }
