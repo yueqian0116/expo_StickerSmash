@@ -44,7 +44,7 @@ export default function TabsLayout() {
           ),
         }}
       />
-      {/* <Tabs.Screen
+      <Tabs.Screen
         name="contact"
         options={{
           headerTitle: "Contact",
@@ -56,7 +56,7 @@ export default function TabsLayout() {
             />
           ),
         }}
-      /> */}
+      />
     </Tabs>
   );
 }

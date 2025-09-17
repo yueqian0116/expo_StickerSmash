@@ -8,7 +8,7 @@ export default function RootLayout() {
   return (
     <>
       {/* for battery and time */}
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" options={{}} />
